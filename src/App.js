@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+import "./Assets/index.css";
+import "./Assets/index.scss";
+import "./Assets/style.css";
+
+import Navbar from "./Layouts/Navbar";
+import Footer from "./Layouts/Footer";
+
+import About from "./Components/About";
+import Booking from "./Components/Booking";
+import Contact from "./Components/Contact";
+import Index from "./Components/Index";
+import Login from "./Components/Login";
+import Register from "./Components/Register";
+import UpcomingMovie from "./Components/UpcomingMovie";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Navbar />
+        <main className="py-3">
+          <Routes>
+            <Route path="/" exact element={<Index />} />
+            <Route path="/about" exact element={<About />} />
+            <Route path="/contact" exact element={<Contact />} />
+            <Route path="/booking" exact element={<Booking />} />
+            <Route path="/login" exact element={<Login />} />
+            <Route path="/register" exact element={<Register />} />
+            <Route path="/upcomingmovies" exact element={<UpcomingMovie />} />
+          </Routes>
+        </main>
+        <Footer />
+      </Router>
+    </>
   );
 }
 
