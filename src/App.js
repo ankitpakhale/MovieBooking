@@ -20,17 +20,15 @@ function App() {
     <>
       <Router>
         <Navbar />
-        <main className="py-3">
-          <Routes>
-            <Route path="/" exact element={<Index />} />
-            <Route path="/about" exact element={<About />} />
-            <Route path="/contact" exact element={<Contact />} />
-            <Route path="/booking" exact element={<Booking />} />
-            <Route path="/login" exact element={<Login />} />
-            <Route path="/register" exact element={<Register />} />
-            <Route path="/upcomingmovies" exact element={<UpcomingMovie />} />
-          </Routes>
-        </main>
+        <Routes>
+          <Route path="/" exact element={<Index />} />
+          <Route path="/about" exact element={<About />} />
+          <Route path="/contact" exact element={<Contact />} />
+          <Route path="/booking" exact element={<Booking />} />
+          <Route path="/login" exact element={<Login />} />
+          <Route path="/register" exact element={<Register />} />
+          <Route path="/upcomingmovies" exact element={<UpcomingMovie />} />
+        </Routes>
         <Footer />
       </Router>
     </>
